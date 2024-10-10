@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const greetings = ["Hi", "你好", "Salut", "Hola", "Ciao", "Hallo", "Hej"];
+    const greetings = ["Hi", "你好", "Salut", "Hola", "Ciao", "Hallo", "Hej", "こんにちは"];
     let index = 0;
 
     function changeGreeting() {
