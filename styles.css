@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     background-color: #f4f4f4;
     color: #333;
     scroll-behavior: smooth;
@@ -77,6 +77,20 @@ body {
     align-items: center;   
 }
 
+.header-six {
+    background-image: url('./Figures/Photos/ShenZhenBay.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    display: flex;     
+    flex-direction: column;      
+    justify-content: center;  
+    align-items: center;   
+}
+
 .nav-one {
     display: flex;
     justify-content: center;
@@ -109,6 +123,13 @@ body {
     display: flex;
     justify-content: center;
     background: linear-gradient(to right, #000000, #515151);
+    padding: 10px;
+    color: #333
+}
+.nav-six {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #1e2b3a, #f18e47);
     padding: 10px;
     color: #333
 }
@@ -148,6 +169,13 @@ body {
     font-size: 1.2em;
     transition: color 0.3s ease;
 }
+.nav-six a {
+    color: #f4f4f4;
+    margin: 0 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
 
 .nav-one a:hover {
     color: #a8a8a8;
@@ -169,6 +197,11 @@ body {
     color: #a8a8a8;
     border-radius: 4px;
 }
+.nav-six a:hover {
+    color: #a8a8a8;
+    border-radius: 4px;
+}
+
 
 section {
     max-width: 1500px;
