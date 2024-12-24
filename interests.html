@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuhao Zhang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header-five">
+        <h1>Shuhao Zhang</h1>
+        <p>Master's Student &nbsp; ｜ &nbsp; Southeast University, China</p>
+    </header>
+
+    <nav class="nav-five">
+        <a href="index.html">About Me</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="activities.html">Activities</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="interests.html">Personal Interests</a>
+    </nav>
+
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <h3>Music: Guitar & Bands</h3>
+
+        <p>In my free time, I’m a nerd about modern guitar playing, music and bands. </p>
+        <p>In general, I mostly listen to the genre <em><b>Modern Metalcore</b></em>, often referred to as <a href="https://en.wikipedia.org/wiki/Djent" target="_blank"><em><b>Djent</b></em></a> or <a href="https://en.wikipedia.org/wiki/Progressive_metalcore" target="_blank"><em><b>Progressive Metalcore</b></em></a>.</p>
+        <p>In present days, bands including <a href="https://en.wikipedia.org/wiki/Invent_Animate" target="_blank"><em><b>Invent Animates</b></em></a>, <a href="https://en.wikipedia.org/wiki/Erra_(band)" target="_blank"><em><b>ERRA</b></em></a>, <a href="https://en.wikipedia.org/wiki/Spiritbox"><em><b>Spiritbox</b></em></a>, <a href="https://en.wikipedia.org/wiki/Northlane" target="_blank"><em><b>Northlane</b></em></a> <em><b>...</b></em> are often considered as representatives of this genre. </p>
+        <p>Here, I list some of my favorite albums (from the newest to the oldest). Click the link bellow to check them.</p>
+
+        <button id="toggleButton">Show Albums</button>
+
+        <div class="grid-container" id="imageContainer"></div>
+
+        <script>
+            const images = [
+                './Figures/Album Covers/2024.Poppy.jpg',
+                './Figures/Album Covers/2024.Counterparts.jpg',
+                './Figures/Album Covers/2024.IA.jpg',
+                './Figures/Album Covers/2024.ERRA.jpg',
+                './Figures/Album Covers/2024.BMTH.jpg',
+                './Figures/Album Covers/2023.Yellowcard.jpg',
+                './Figures/Album Covers/2023.Unprocessed.jpg',
+                './Figures/Album Covers/2023.Spiritbox.jpg',
+                './Figures/Album Covers/2022.Unprocessed.jpg',
+                './Figures/Album Covers/2022.Polyphia.jpg',
+                './Figures/Album Covers/2022.Northlane.jpg',
+                './Figures/Album Covers/2022.ERRA.jpg',
+                './Figures/Album Covers/2022.Counterparts.jpg',
+                './Figures/Album Covers/2021.vildhjarta.jpg',
+                './Figures/Album Covers/2021.Volumes.jpg',
+                './Figures/Album Covers/2021.Spiritbox.jpg',
+                './Figures/Album Covers/2021.SP.jpg',
+                './Figures/Album Covers/2021.Resolve.jpg',
+                './Figures/Album Covers/2021.LANDMVRKS.jpg',
+                './Figures/Album Covers/2020.Northlane.jpg',
+                './Figures/Album Covers/2020.NOVELISTS.jpg',
+                './Figures/Album Covers/2020.Loathe.jpg',
+                './Figures/Album Covers/2020.Intervals.jpg',
+                './Figures/Album Covers/2020.IA.jpg',
+                './Figures/Album Covers/2020.DS.jpg',
+                './Figures/Album Covers/2020.Currents.jpg',
+                './Figures/Album Covers/2019.Volumes.jpg',
+                './Figures/Album Covers/2019.Unprocessed.jpg',
+                './Figures/Album Covers/2019.KL.jpg',
+                './Figures/Album Covers/2019.ERRA.jpg',
+                './Figures/Album Covers/2019.Counterparts.jpg',
+                './Figures/Album Covers/2018.Unprocessed.jpg',
+                './Figures/Album Covers/2018.RF.jpg',
+                './Figures/Album Covers/2018.MDB.jpg',
+                './Figures/Album Covers/2018.LANDMVRKS.jpg',
+                './Figures/Album Covers/2018.Architechts.jpg',
+                './Figures/Album Covers/2017.RTS.jpg',
+                './Figures/Album Covers/2017.OAA.jpg',
+                './Figures/Album Covers/2017.NOVELISTS.jpg',
+                './Figures/Album Covers/2017.Kadinja.jpg',
+                './Figures/Album Covers/2017.Counterparts.jpg',
+                './Figures/Album Covers/2016.Yellowcard.jpg',
+                './Figures/Album Covers/2016.Plini.jpg',
+                './Figures/Album Covers/2016.LANDMVRKS.jpg',
+                './Figures/Album Covers/2016.IA.jpg',
+                './Figures/Album Covers/2016.ERRA.jpg',
+                './Figures/Album Covers/2015.NOVELISTS.jpg',
+                './Figures/Album Covers/2015.Counterparts.jpg',
+                './Figures/Album Covers/2015.CNCC.jpg',
+                './Figures/Album Covers/2014.Yellowcard.jpg',
+                './Figures/Album Covers/2014.Volumes.jpg',
+                './Figures/Album Covers/2014.RF.jpg',
+                './Figures/Album Covers/2014.IA.jpg',
+                './Figures/Album Covers/2013.KOL.jpg',
+                './Figures/Album Covers/2013.Counterparts.jpg',
+                './Figures/Album Covers/2012.Yellowcard.jpg',
+                './Figures/Album Covers/2007.Yellowcard.jpg',
+                './Figures/Album Covers/2005.FFAF.jpg',
+                './Figures/Album Covers/2003.Yellowcard.jpg',
+                './Figures/Album Covers/2003.FFAF.jpg',
+            ];
+        
+            const container = document.getElementById('imageContainer');
+        
+            images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = '图片';
+                container.appendChild(img);
+            });
+
+            const toggleButton = document.getElementById('toggleButton');
+            const collapsible = document.getElementById('imageContainer');
+            
+            toggleButton.addEventListener('click', () => {
+                const isCollapsed = collapsible.style.display === 'none' || !collapsible.style.display;
+                collapsible.style.display = isCollapsed ? 'grid' : 'none';
+                toggleButton.textContent = isCollapsed ? 'Hide Albums' : 'Show Albums';
+            });
+
+            collapsible.style.display = 'none';
+        </script>
+        
+
+        <h3>Films</h3>
+
+        <p>I am obsessed with films that shock me with great
+            cinematography, immersive atmosphere and strong emotion.</p>
+
+        <p>My favorite directors who produce this kind of films include <a href="https://en.wikipedia.org/wiki/Denis_Villeneuve" target="_blank"><em><b>Denis Villeneuve</b></em></a>, <a href="https://en.wikipedia.org/wiki/Nicolas_Winding_Refn" target="_blank"><em><b>Nicolas Winding Refn</b></em></a>, <a href="https://en.wikipedia.org/wiki/Alex_Garland" target="_blank"><em><b>Alex Garland</b></em></a><em><b>...</b></em></p>
+
+        <p>My Top 1 film of all time is <a href="https://en.wikipedia.org/wiki/Blade_Runner_2049"><em><b>Blade Runner 2049</b></em></a> by <em><b>Denis Villeneuve</b></em>.</p>
+        <div class="grid-container" id="imageContainer_2049">
+            <img src="./Figures/Film Posters/2017.Blade.Runner.2049.jpg">
+        </div>
+        
+        <p>I also select some of my favorite films/series down bellow (from the newest to the oldest). Click the link bellow to check them as well.</p>
+
+        <button id="toggleButton_films">Show Films</button>
+
+        <div class="grid-container" id="imageContainer_films"></div>
+
+        <script>
+            const images_films = [
+                './Figures/Film Posters/2024.The.Substance.jpg',
+                './Figures/Film Posters/2024.Kinds.of.Kindness.jpg',
+                './Figures/Film Posters/2024.Dune.Part.Two.jpg',
+                './Figures/Film Posters/2024.Civil.War.jpg',
+                './Figures/Film Posters/2023.The.Zone.of.Interest.jpg',
+                './Figures/Film Posters/2023.Poor.Things.jpg',
+                './Figures/Film Posters/2023.Oppenheimer.jpg',
+                './Figures/Film Posters/2023.Asteroid.City.jpg',
+                './Figures/Film Posters/2023.Anatomy.of.a.Fall.jpg',
+                './Figures/Film Posters/2022.Nope.jpg',
+                './Figures/Film Posters/2022.Men.jpg',
+                './Figures/Film Posters/2022.Everything.Everywhere.All.at.Once.jpg',
+                './Figures/Film Posters/2022.All.Quiet.on.the.Western.Front.jpg',
+                './Figures/Film Posters/2021.Dune.jpg',
+                './Figures/Film Posters/2020.Tenet.jpg',
+                './Figures/Film Posters/2020.Tales.from.the.Loop.jpg',
+                './Figures/Film Posters/2020.Devs.jpg',
+                './Figures/Film Posters/2019.Uncut.Gems.jpg',
+                './Figures/Film Posters/2019.Once.Upon.a.Time.in.Hollywood.jpg',
+                './Figures/Film Posters/2019.1917.jpg',
+                './Figures/Film Posters/2018.The.House.That.Jack.Built.jpg',
+                './Figures/Film Posters/2018.Annihilation.jpg',
+                './Figures/Film Posters/2017.Wind.River.jpg',
+                './Figures/Film Posters/2017.The.Shape.of.Water.jpg',
+                './Figures/Film Posters/2017.Split.jpg',
+                './Figures/Film Posters/2017.Good.Time.jpg',
+                './Figures/Film Posters/2017.Get.Out.jpg',
+                './Figures/Film Posters/2017.Dunkirk.jpg',
+                './Figures/Film Posters/2016.The Neon Demon.jpg',
+                './Figures/Film Posters/2016.Hell.or.High.Water.jpg',
+                './Figures/Film Posters/2016.Arrival.jpg',
+                './Figures/Film Posters/2015.The.Hateful.Eight.jpg',
+                './Figures/Film Posters/2015.Sicario.jpg',
+                './Figures/Film Posters/2015.Heaven.Knows.What.jpg',
+                './Figures/Film Posters/2015.Ex.Machina.jpg',
+                './Figures/Film Posters/2014.The.Grand.Budapest.Hotel.jpg',
+                './Figures/Film Posters/2014.Prisoners.jpg',
+                './Figures/Film Posters/2014.Interstellar.jpg',
+                './Figures/Film Posters/2014.Enemy.jpg',
+                './Figures/Film Posters/2013.Only.God.Forgives.jpg',
+                './Figures/Film Posters/2013.Her.jpg',
+                './Figures/Film Posters/2012.The.Hunt.jpg',
+                './Figures/Film Posters/2012.Django.Unchained.jpg',
+                './Figures/Film Posters/2011.Melancholia.jpg',
+                './Figures/Film Posters/2011.Drive.jpg',
+                './Figures/Film Posters/2011.Black.Mirror.jpg',
+                './Figures/Film Posters/2010.Polytechnique.jpg',
+                './Figures/Film Posters/2010.Inception.jpg',
+                './Figures/Film Posters/2010.Incendies.jpg',
+                './Figures/Film Posters/2009.Valhalla.Rising.jpg',
+                './Figures/Film Posters/2009.Mr.Nobody.jpg',
+                './Figures/Film Posters/2009.Inglourious.Basterds.jpg',
+                './Figures/Film Posters/2009.Bronson.jpg',
+                './Figures/Film Posters/2007.The.Assassination.of.Jesse.James.by.the.Coward.Robert.Ford.jpg',
+                './Figures/Film Posters/2007.No.Country.for.Old.Men.jpg',
+                './Figures/Film Posters/2006.The.Prestige.jpg',
+                './Figures/Film Posters/2006.The.Lives.of.Others.jpg',
+                './Figures/Film Posters/2005.Manderlay.jpg',
+                './Figures/Film Posters/2005.Jarhead.jpg',
+                './Figures/Film Posters/2004.Ghost.in.the.Shell.2.Innocence.jpg',
+                './Figures/Film Posters/2003.Memories.of.Murder.jpg',
+                './Figures/Film Posters/2003.Elephant.jpg',
+                './Figures/Film Posters/2003.Dogville.jpg',
+                './Figures/Film Posters/2002.Insomnia.jpg',
+                './Figures/Film Posters/2001.Mulholland.Drive.jpg',
+                './Figures/Film Posters/2001.Memento.jpg',
+                './Figures/Film Posters/2000.Requiem.for.a.Dream.jpg',
+                './Figures/Film Posters/2000.Maelstrom.jpg',
+                './Figures/Film Posters/2000.Joint.Security.Area.jpg',
+                './Figures/Film Posters/2000.American.Psycho.jpg',
+                './Figures/Film Posters/1999.Fight.Club.jpg',
+                './Figures/Film Posters/1999.Eyes.Wide.Shut.jpg',
+                './Figures/Film Posters/1998.The.Thin.Red.Line.jpg',
+                './Figures/Film Posters/1998.Serial.Experiments.Lain.jpg',
+                './Figures/Film Posters/1995.Ghost.in.the.Shell.jpg',
+                './Figures/Film Posters/1994.Pulp.Fiction.jpg',
+                './Figures/Film Posters/1992.Reservoir.Dogs.jpg',
+                './Figures/Film Posters/1990.Twin.Peaks.jpg',
+                './Figures/Film Posters/1987.The.Last.Emperor.jpg',
+                './Figures/Film Posters/1987.Full.Metal.Jecket.jpg',
+                './Figures/Film Posters/1986.Sacrifice.jpg',
+                './Figures/Film Posters/1985.Ran.jpg',
+                './Figures/Film Posters/1985.Come.and.See.jpg',
+                './Figures/Film Posters/1984.Nineteen.Eighty.Four.jpg',
+                './Figures/Film Posters/1983.Merry.Christmas.Mr.Lawrence.jpg',
+                './Figures/Film Posters/1982.Blade.Runner.jpg',
+                './Figures/Film Posters/1980.The.Shining.jpg',
+                './Figures/Film Posters/1980.Kagemusha.jpg',
+                './Figures/Film Posters/1979.Stalker.jpg',
+                './Figures/Film Posters/1979.Apocalypse.Now.jpg',
+                './Figures/Film Posters/1979.Alien.jpg',
+                './Figures/Film Posters/1977.Close.Encounters.of.the.Third.Kind.jpg',
+                './Figures/Film Posters/1975.Barry.Lyndon.jpg',
+                './Figures/Film Posters/1973.The.Holy.Mountain.jpg',
+                './Figures/Film Posters/1972.Solaris.jpg',
+                './Figures/Film Posters/1971.A.Clockwork.Orange.jpg',
+                './Figures/Film Posters/1968.2001.A.Space.Odyssey.jpg',
+                './Figures/Film Posters/1966.Persona.jpg',
+                './Figures/Film Posters/1964.Dr.Strangelove.or.How.I.Learned.to.Stop.Worrying.and.Love.the.Bomb.jpg',
+                './Figures/Film Posters/1963.High.and.Low.jpg',
+                './Figures/Film Posters/1957.Paths.of.Glory.jpg',
+                './Figures/Film Posters/1957.12.Angry.Men.jpg',
+                './Figures/Film Posters/1954.Seven.Samurai.jpg',
+                './Figures/Film Posters/1950.Rashomon.jpg',
+            ];
+        
+            const container_films = document.getElementById('imageContainer_films');
+        
+            images_films.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = '图片';
+                container_films.appendChild(img);
+            });
+
+            const toggleButton_films = document.getElementById('toggleButton_films');
+            const collapsible_films = document.getElementById('imageContainer_films');
+            
+            toggleButton_films.addEventListener('click', () => {
+                const isCollapsed_films = collapsible_films.style.display === 'none' || !collapsible.style.display;
+                collapsible_films.style.display = isCollapsed_films ? 'grid' : 'none';
+                toggleButton_films.textContent = isCollapsed_films ? 'Hide Films' : 'Show Films';
+            });
+
+            collapsible_films.style.display = 'none';
+        </script>
+
+        <h3>Others</h3>
+        <p>Some other items also interest me a lot, they are:</p>
+        <ul>
+            <li>The video game <a href="https://en.wikipedia.org/wiki/Death_Stranding" target="_blank"><em><b>Death Stranding</b></em></a> by <a href="https://en.wikipedia.org/wiki/Hideo_Kojima" target="_blank"><em><b>Hideo Kojima</b></em></a></li>
+            <li>Foreign languages (especially French), culture & history</li>
+            <li>Photography</li>
+            <li>Philosophy</li>
+            <li>Geography & Meteorology</li>
+            <li>Aviation</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Shuhao Zhang</p>
+        <p>All album covers and film posters displayed on this page (including the header picture) are not owned by me. They are the property of their respective copyright holders.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
